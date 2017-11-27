@@ -2,8 +2,8 @@
 HTTP SDK工具类，用来向服务端发送HTTP请求，请求支持POST/GET方式。如果提供了AccessKey和SecurityKey参数信息，它能够在内部将请求消息进行签名处理，然后向CSB服务端发送进行验证和调用。
 
 # HTTP Client SDK 使用方式
-C# 代码
-~~~ javascript
+### C# 代码
+``` javascript
  class Program
     {
         static void Main(string[] args)
@@ -22,7 +22,7 @@ C# 代码
             
         }
     }
-~~~
+```
 
 
 # 签名机制的说明
@@ -38,5 +38,5 @@ b. 参数名称和值使用英文等号（=）进行连接。再把英文等号�
 
 4 将得到的签名值作为_api_signature参数添加到请求参数中，即完成对请求签名的过程。
 
-# HTTP SDK 签名处理的图示
+### HTTP SDK 签名处理的图示
 ![](https://github.com/aliyun/csb-sdk/raw/master/http-client/img/http-sign.png)
