@@ -1,0 +1,6 @@
+D:\开源项目\CSBSDK.NET\CSBSDK.NET\obj\Debug\CSBSDK.NET.csproj.CoreCompileInputs.cache
+D:\开源项目\CSBSDK.NET\CSBSDK.NET\bin\Debug\CSBSDK.NET.dll
+D:\开源项目\CSBSDK.NET\CSBSDK.NET\bin\Debug\CSBSDK.NET.pdb
+D:\开源项目\CSBSDK.NET\CSBSDK.NET\obj\Debug\CSBSDK.NET.dll
+D:\开源项目\CSBSDK.NET\CSBSDK.NET\obj\Debug\CSBSDK.NET.pdb
+D:\开源项目\CSBSDK.NET\CSBSDK.NET\obj\Debug\CSBSDK.NET.csprojResolveAssemblyReference.cache

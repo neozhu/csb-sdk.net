@@ -1,0 +1,8 @@
+D:\开源项目\CSBSDK.NET\TestConsoleApp\bin\Debug\TestConsoleApp.exe
+D:\开源项目\CSBSDK.NET\TestConsoleApp\bin\Debug\TestConsoleApp.pdb
+D:\开源项目\CSBSDK.NET\TestConsoleApp\bin\Debug\CSBSDK.NET.dll
+D:\开源项目\CSBSDK.NET\TestConsoleApp\bin\Debug\CSBSDK.NET.pdb
+D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.csprojResolveAssemblyReference.cache
+D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.csproj.CoreCompileInputs.cache
+D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.exe
+D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.pdb
