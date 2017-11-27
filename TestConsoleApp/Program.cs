@@ -18,6 +18,7 @@ namespace TestConsoleApp
             var sk = "zJke7U3yGMG7kGQ9SfxfU/hzzBg=";
 
             var result = CSBSDK.NET.HttpCaller.doPost(requesturl, apiname, version, requestdata, ak, sk);
+            Console.Write(result);
 
             
         }
