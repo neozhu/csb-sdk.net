@@ -12,11 +12,12 @@
         public static string sign(Dictionary<string, string> newParamsMap, string secretKey)
         {
             Dictionary<string, string> dictionary = (from d in newParamsMap
-                orderby d.Key
+                
                 select d).ToDictionary<KeyValuePair<string, string>, string, string>(k => k.Key, v => v.Value);
             StringBuilder builder = new StringBuilder();
             foreach (KeyValuePair<string, string> pair in dictionary)
             {
+              
                 builder.Append(string.Format("{0}={1}&", pair.Key, pair.Value));
             }
             string str = builder.ToString();

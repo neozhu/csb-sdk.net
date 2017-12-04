@@ -4,30 +4,39 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Net;
+    using System.Net.Http;
     using System.Net.Security;
     using System.Security.Cryptography.X509Certificates;
     using System.Text;
-
+    using System.Linq;
     public class HttpCaller
     {
         private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
             return true;
         }
+        protected static FormUrlEncodedContent createformdata(Dictionary<string, string> ps) {
+            var list = ps.ToList<KeyValuePair<string, string>>();
+            var data = new FormUrlEncodedContent(list);
+            return data;
+
+        }
 
         protected static string createPost(Dictionary<string, string> ps)
         {
+           
             StringBuilder builder = new StringBuilder();
             foreach (KeyValuePair<string, string> pair in ps)
             {
-                builder.Append(string.Format("{0}={1}&", pair.Key, pair.Value));
+             
+                    builder.Append(string.Format("{0}={1}&", pair.Key, pair.Value));
             }
             string str = builder.ToString();
             if (str.EndsWith("&"))
             {
                 str = str.Substring(0, str.Length - 1);
             }
-            return str;
+            return  str;
         }
 
         public static string doPost(string requestURL, string apiName, string version, Dictionary<string, string> paramsMap, string accessKey, string securityKey)
@@ -72,11 +81,11 @@
             };
 
             string parameters = createPost(ps);
-            
+            //var content = createformdata(ps);
             return HttpPOST(requestURL, parameters, httpheaderkeys);
         }
 
-        public static string Http(string url, string parameters, Encoding charset, NetworkCredential _credentials, Dictionary<string, string> keys, string ContentType, string methed)
+        public static string Http(string url,  string parameters, Encoding charset, NetworkCredential _credentials, Dictionary<string, string> keys, string ContentType, string methed)
         {
             HttpWebRequest request = null;
             HttpWebResponse response;
@@ -85,7 +94,7 @@
             request.ProtocolVersion = HttpVersion.Version11;
             request.Method = methed;
             request.ContentType = ContentType;
-            request.Accept = "application/json";
+            request.Accept = "application/x-www-form-urlencoded; charset=UTF-8";
             if (keys != null)
             {
                 foreach (KeyValuePair<string, string> pair in keys)
@@ -100,8 +109,10 @@
             if ((parameters != null) && (parameters.Length > 0))
             {
                 byte[] bytes = charset.GetBytes(parameters.ToString());
+                request.ContentLength = bytes.Length;
                 using (Stream stream2 = request.GetRequestStream())
                 {
+                    //body.CopyToAsync(stream2);
                     stream2.Write(bytes, 0, bytes.Length);
                 }
             }
@@ -135,9 +146,9 @@
             return paramsDic;
 
         }
-        public static string HttpPOST(string url, string parameters, Dictionary<string, string> keys)
+        public static string HttpPOST(string url,  string parameters, Dictionary<string, string> keys)
         {
-            return Http(url, parameters, Encoding.GetEncoding("utf-8"), null, keys, "application/x-www-form-urlencoded", "POST");
+            return Http(url,  parameters, Encoding.GetEncoding("utf-8"), null, keys, "application/x-www-form-urlencoded", "POST");
         }
 
         private static Dictionary<string, string> newParamsMap(Dictionary<string, string> paramsMap, string apiName, string version, string accessKey, string securityKey)
@@ -153,19 +164,19 @@
                     }
                 }
             }
+            newParamsMap.Add("_api_access_key", accessKey);
             newParamsMap.Add("_api_name", apiName);
-            if (version != null)
-            {
-                newParamsMap.Add("_api_version", version);
-            }
+          
+               
+          
             DateTime time = new DateTime(0x7b2, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             TimeSpan span = (TimeSpan) (DateTime.UtcNow - time);
             newParamsMap.Add("_api_timestamp", ((long) span.TotalMilliseconds).ToString());
-            if (accessKey != null)
-            {
-                newParamsMap.Add("_api_access_key", accessKey);
-                newParamsMap.Add("_api_signature", SignUtil.sign(newParamsMap, securityKey));
-            }
+            
+                
+            
+            newParamsMap.Add("_api_version", version);
+            newParamsMap.Add("_api_signature", SignUtil.sign(newParamsMap, securityKey));
             return newParamsMap;
         }
 

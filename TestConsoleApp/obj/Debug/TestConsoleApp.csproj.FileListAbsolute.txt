@@ -6,3 +6,14 @@ D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.csprojResolve
 D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.csproj.CoreCompileInputs.cache
 D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.exe
 D:\开源项目\CSBSDK.NET\TestConsoleApp\obj\Debug\TestConsoleApp.pdb
+D:\开源项目\csb-sdk.net\TestConsoleApp\bin\Debug\TestConsoleApp.exe
+D:\开源项目\csb-sdk.net\TestConsoleApp\bin\Debug\TestConsoleApp.pdb
+D:\开源项目\csb-sdk.net\TestConsoleApp\bin\Debug\CSBSDK.NET.dll
+D:\开源项目\csb-sdk.net\TestConsoleApp\bin\Debug\Newtonsoft.Json.dll
+D:\开源项目\csb-sdk.net\TestConsoleApp\bin\Debug\CSBSDK.NET.pdb
+D:\开源项目\csb-sdk.net\TestConsoleApp\bin\Debug\Newtonsoft.Json.xml
+D:\开源项目\csb-sdk.net\TestConsoleApp\obj\Debug\TestConsoleApp.csprojResolveAssemblyReference.cache
+D:\开源项目\csb-sdk.net\TestConsoleApp\obj\Debug\TestConsoleApp.csproj.CoreCompileInputs.cache
+D:\开源项目\csb-sdk.net\TestConsoleApp\obj\Debug\TestConsoleApp.exe
+D:\开源项目\csb-sdk.net\TestConsoleApp\obj\Debug\TestConsoleApp.pdb
+D:\开源项目\csb-sdk.net\TestConsoleApp\bin\Debug\TestConsoleApp.exe.config
